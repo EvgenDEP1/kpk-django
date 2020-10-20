@@ -6,8 +6,8 @@ def index(request):
 
 
 def catalog(request):
-    pass
+    return render(request, 'mainapp/catalog.html')
 
 
 def basket(request):
-    pass
+    return render(request, 'mainapp/basket.html')
