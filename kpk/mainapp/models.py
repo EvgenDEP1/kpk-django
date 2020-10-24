@@ -14,6 +14,15 @@ class SubjectCategory(models.Model):
 
 
 class Course(models.Model):
+    EASY = 'e'
+    MEDIUM = 'm'
+    HARD = 'h'
+    LEVEL_CHOICES = (
+        (EASY, 'легкий'),
+        (MEDIUM, 'средний'),
+        (HARD, 'продвинутый'),
+    )
+
     category = models.ForeignKey(SubjectCategory,
                                  on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
@@ -23,3 +32,7 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Курс'
+        verbose_name_plural = 'Курсы'

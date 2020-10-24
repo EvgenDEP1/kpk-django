@@ -2,4 +2,16 @@
 
 {% block content %}
     <h1>Это каталог</h1>
+    <div class="catalog-menu">
+        <ul>
+            {% for item in categories %}
+                <li>>
+                    <a href="{% url 'catalog_page' item.pk %}">
+                        {{ item }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
 {% endblock %}

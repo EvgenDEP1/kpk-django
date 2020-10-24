@@ -20,7 +20,10 @@ from django.urls import path
 
 urlpatterns = [
     path('', mainapp.index),
-    path('catalog/', mainapp.catalog),
-    path('basket/', mainapp.basket),
+    path('catalog/', mainapp.catalog, name='catalog'),
+
+    path('catalog/category/<int:pk>/', mainapp.catalog_page, name='catalog_page'),
+
+    path('basket/', mainapp.basket, name='basket'),
     path('admin/', admin.site.urls),
 ]
